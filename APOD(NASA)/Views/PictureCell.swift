@@ -11,4 +11,12 @@ class PictureCell: UICollectionViewCell {
     
     @IBOutlet var pictureImage: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
+    
+    func configure(with picture: Picture) {
+        descriptionLabel.text = """
+\(picture.date)
+\(picture.title)
+"""
+        
+    }
 }
