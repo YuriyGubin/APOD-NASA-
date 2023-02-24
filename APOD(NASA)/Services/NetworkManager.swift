@@ -18,7 +18,7 @@ enum Link: String {
 }
 
 class NetworkManager {
-    let shared = NetworkManager()
+    static let shared = NetworkManager()
     
     private init() {}
     

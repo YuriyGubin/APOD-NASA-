@@ -17,6 +17,13 @@ class PictureCell: UICollectionViewCell {
 \(picture.date)
 \(picture.title)
 """
-        
+        NetworkManager.shared.fetchImage(from: picture.url) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.pictureImage.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
