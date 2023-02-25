@@ -54,6 +54,8 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
+                                    <outlet property="descriptionLabel" destination="6uV-KB-Z32" id="jXO-pS-ASd"/>
+                                    <outlet property="pictureImage" destination="YDg-X9-Rku" id="DHp-UO-AhL"/>
                                     <segue destination="8KG-z1-biy" kind="show" identifier="showDetails" id="DH7-Ce-CVM"/>
                                 </connections>
                             </collectionViewCell>
@@ -69,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="3321.3740458015268" y="-10.563380281690142"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Gdc-9e-Ql0">
             <objects>
-                <viewController id="8KG-z1-biy" sceneMemberID="viewController">
+                <viewController id="8KG-z1-biy" customClass="DetailViewController" customModule="APOD_NASA_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="23K-b4-fHE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,6 +105,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Inz-Vw-mc5"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="aDz-o2-K5M" id="7uW-xJ-Cu6"/>
+                        <outlet property="pictureHDImage" destination="QTw-4o-ThY" id="6na-kZ-aZa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjA-RA-LQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
