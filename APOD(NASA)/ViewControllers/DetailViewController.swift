@@ -7,14 +7,35 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
     
     @IBOutlet var pictureHDImage: UIImageView!
     @IBOutlet var descriptionTextView: UITextView!
+    
+    var picture: Picture!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    private func setupViews() {
+        NetworkManager.shared.fetchImage(from: picture.hdurl) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.pictureHDImage.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        descriptionTextView.text = """
+\(picture.title)
+\(picture.date)
+
+\(picture.explanation)
+
+\(picture.copyright)
+"""
+    }
 
 }
