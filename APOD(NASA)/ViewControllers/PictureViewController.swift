@@ -13,6 +13,7 @@ class PictureViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchPictures()
     }
 
     // MARK: UICollectionViewDataSource
