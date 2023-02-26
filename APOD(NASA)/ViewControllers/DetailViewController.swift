@@ -19,7 +19,7 @@ final class DetailViewController: UIViewController {
     }
     
     private func setupViews() {
-        NetworkManager.shared.fetchImage(from: picture.hdurl) { [weak self] result in
+        NetworkManager.shared.fetchImage(from: picture.hdurl ?? picture.url) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.pictureHDImage.image = UIImage(data: imageData)
@@ -34,7 +34,7 @@ final class DetailViewController: UIViewController {
 
 \(picture.explanation)
 
-\(picture.copyright)
+\(String(describing: picture.copyright))
 """
     }
 
