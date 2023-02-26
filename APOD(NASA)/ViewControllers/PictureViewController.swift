@@ -19,15 +19,15 @@ class PictureViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pictures?.count ?? 0
+        pictures.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "picture", for: indexPath)
         guard let cell = cell as? PictureCell else { return UICollectionViewCell()}
-        if let picture = pictures?[indexPath.item] {
-            cell.configure(with: picture)
-        }
+        let picture = pictures[indexPath.item]
+        cell.configure(with: picture)
+        
         return cell
     }
 
