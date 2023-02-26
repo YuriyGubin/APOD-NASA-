@@ -25,7 +25,8 @@ class PictureViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "picture", for: indexPath)
         guard let cell = cell as? PictureCell else { return UICollectionViewCell()}
-        let picture = pictures[indexPath.item]
+        let reversedPictures = pictures.reversed()
+        let picture = Array(reversedPictures)[indexPath.item]
         cell.configure(with: picture)
         
         return cell
