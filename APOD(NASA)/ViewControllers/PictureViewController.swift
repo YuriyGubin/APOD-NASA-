@@ -19,15 +19,15 @@ class PictureViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        pictures.count
+        pictures?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "picture", for: indexPath)
         guard let cell = cell as? PictureCell else { return UICollectionViewCell()}
-        let picture = pictures[indexPath.item]
-        cell.configure(with: picture)
-    
+        if let picture = pictures?[indexPath.item] {
+            cell.configure(with: picture)
+        }
         return cell
     }
 
@@ -37,8 +37,8 @@ class PictureViewController: UICollectionViewController {
      // MARK: - Navigation
      
      
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     }
+//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//     }
     
 }
 
