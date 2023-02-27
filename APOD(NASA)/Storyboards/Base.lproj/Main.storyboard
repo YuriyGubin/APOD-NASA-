@@ -23,6 +23,10 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Stars" id="agM-5O-e8v">
+                            <rect key="frame" x="0.0" y="-103" width="393" height="852"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="picture" id="LoK-E9-fPe" customClass="PictureCell" customModule="APOD_NASA_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -100,6 +104,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Butterfly" translatesAutoresizingMaskIntoConstraints="NO" id="ya2-h3-o4A">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QTw-4o-ThY">
                                 <rect key="frame" x="0.0" y="155" width="393" height="393"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -128,8 +135,11 @@
                         <viewLayoutGuide key="safeArea" id="4EJ-jA-o1v"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ya2-h3-o4A" firstAttribute="top" secondItem="23K-b4-fHE" secondAttribute="top" id="01e-TU-qFE"/>
+                            <constraint firstItem="ya2-h3-o4A" firstAttribute="trailing" secondItem="4EJ-jA-o1v" secondAttribute="trailing" id="1vh-jF-z9R"/>
                             <constraint firstItem="QTw-4o-ThY" firstAttribute="trailing" secondItem="4EJ-jA-o1v" secondAttribute="trailing" id="BUW-hl-2xp"/>
                             <constraint firstItem="jcd-Pt-gP8" firstAttribute="height" secondItem="23K-b4-fHE" secondAttribute="height" multiplier="0.05" id="Ckd-fR-dmV"/>
+                            <constraint firstItem="ya2-h3-o4A" firstAttribute="leading" secondItem="4EJ-jA-o1v" secondAttribute="leading" id="DD9-Aa-oGG"/>
                             <constraint firstItem="4EJ-jA-o1v" firstAttribute="trailing" secondItem="jcd-Pt-gP8" secondAttribute="trailing" constant="16" id="G6a-Rw-4ys"/>
                             <constraint firstItem="QTw-4o-ThY" firstAttribute="leading" secondItem="4EJ-jA-o1v" secondAttribute="leading" id="W6h-Yo-veH"/>
                             <constraint firstItem="aDz-o2-K5M" firstAttribute="bottom" secondItem="4EJ-jA-o1v" secondAttribute="bottom" id="XVc-3j-xBy"/>
@@ -138,6 +148,7 @@
                             <constraint firstItem="aDz-o2-K5M" firstAttribute="leading" secondItem="4EJ-jA-o1v" secondAttribute="leading" constant="16" id="jJr-ho-EBb"/>
                             <constraint firstItem="jcd-Pt-gP8" firstAttribute="leading" secondItem="4EJ-jA-o1v" secondAttribute="leading" constant="16" id="kV5-Bx-V9r"/>
                             <constraint firstItem="4EJ-jA-o1v" firstAttribute="trailing" secondItem="aDz-o2-K5M" secondAttribute="trailing" constant="16" id="pY8-on-VmN"/>
+                            <constraint firstAttribute="bottom" secondItem="ya2-h3-o4A" secondAttribute="bottom" id="rLP-Aw-4NT"/>
                             <constraint firstItem="aDz-o2-K5M" firstAttribute="top" secondItem="jcd-Pt-gP8" secondAttribute="bottom" id="t1h-J0-tc6"/>
                         </constraints>
                     </view>
@@ -177,6 +188,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Butterfly" width="800" height="1200"/>
+        <image name="Stars" width="1280" height="2120"/>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
