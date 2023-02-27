@@ -10,18 +10,17 @@ import UIKit
 class PictureViewController: UICollectionViewController {
     
     var pictures: [Picture] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPictures()
     }
-
+    
     // MARK: UICollectionViewDataSource
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pictures.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "picture", for: indexPath)
         guard let cell = cell as? PictureCell else { return UICollectionViewCell()}
@@ -32,25 +31,21 @@ class PictureViewController: UICollectionViewController {
         
         return cell
     }
-
+    
     // MARK: UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showDetails", sender: nil)
     }
     
-     // MARK: - Navigation
-     
-     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         guard let indexPaths = collectionView.indexPathsForSelectedItems else { return }
-         guard let detailVC = segue.destination as? DetailViewController else { return }
-         let reversedPictures = pictures.reversed()
-         indexPaths.forEach { indexPath in
-             detailVC.picture = Array(reversedPictures)[indexPath.item]
-         }
-         
-     }
-    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPaths = collectionView.indexPathsForSelectedItems else { return }
+        guard let detailVC = segue.destination as? DetailViewController else { return }
+        let reversedPictures = pictures.reversed()
+        indexPaths.forEach { indexPath in
+            detailVC.picture = Array(reversedPictures)[indexPath.item]
+        }
+    }
 }
 
 // MARK: - Networking
