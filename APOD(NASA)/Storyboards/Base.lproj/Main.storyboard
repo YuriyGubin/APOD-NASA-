@@ -86,18 +86,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QTw-4o-ThY">
-                                <rect key="frame" x="0.0" y="103" width="393" height="323"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="393"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QTw-4o-ThY" secondAttribute="height" multiplier="1:1" id="L0g-F7-GSx"/>
+                                </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aDz-o2-K5M">
-                                <rect key="frame" x="16" y="434" width="361" height="384"/>
+                                <rect key="frame" x="16" y="504" width="361" height="314"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Xkl-TW-w8p">
-                                <rect key="frame" x="178" y="246" width="37" height="37"/>
+                                <rect key="frame" x="178" y="281" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4EJ-jA-o1v"/>
@@ -110,7 +113,6 @@
                             <constraint firstItem="aDz-o2-K5M" firstAttribute="bottom" secondItem="4EJ-jA-o1v" secondAttribute="bottom" id="ap9-zS-gs2"/>
                             <constraint firstItem="4EJ-jA-o1v" firstAttribute="trailing" secondItem="aDz-o2-K5M" secondAttribute="trailing" constant="16" id="bYj-yE-WhR"/>
                             <constraint firstItem="QTw-4o-ThY" firstAttribute="trailing" secondItem="4EJ-jA-o1v" secondAttribute="trailing" id="fDY-dK-QLw"/>
-                            <constraint firstItem="QTw-4o-ThY" firstAttribute="height" secondItem="23K-b4-fHE" secondAttribute="height" multiplier="0.379108" id="njg-kQ-X6O"/>
                             <constraint firstItem="Xkl-TW-w8p" firstAttribute="centerX" secondItem="23K-b4-fHE" secondAttribute="centerX" id="qnZ-dr-gXj"/>
                             <constraint firstItem="aDz-o2-K5M" firstAttribute="top" secondItem="QTw-4o-ThY" secondAttribute="bottom" constant="8" symbolic="YES" id="zzi-SJ-H8E"/>
                         </constraints>
