@@ -9,14 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Picture View Controller-->
+        <!--Picture of the day-->
         <scene sceneID="fUa-0U-fWN">
             <objects>
                 <collectionViewController id="Zqc-Wv-sva" customClass="PictureViewController" customModule="APOD_NASA_" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Xsk-wq-6ua">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cGe-fe-oKQ">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -39,12 +39,17 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ync-Uv-nWs">
+                                            <rect key="frame" x="54" y="54" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Ync-Uv-nWs" firstAttribute="centerX" secondItem="fn9-QG-ZlP" secondAttribute="centerX" id="0l3-U4-Zoy"/>
                                         <constraint firstAttribute="trailing" secondItem="3Z5-lK-HE3" secondAttribute="trailing" constant="8" id="I27-Vk-O5X"/>
                                         <constraint firstItem="VvA-NZ-8hM" firstAttribute="leading" secondItem="fn9-QG-ZlP" secondAttribute="leading" id="IA8-kF-jiT"/>
                                         <constraint firstItem="VvA-NZ-8hM" firstAttribute="top" secondItem="fn9-QG-ZlP" secondAttribute="top" id="MUT-q6-qcs"/>
                                         <constraint firstItem="3Z5-lK-HE3" firstAttribute="height" secondItem="VvA-NZ-8hM" secondAttribute="height" multiplier="0.3" id="O72-Oo-m0c"/>
+                                        <constraint firstItem="Ync-Uv-nWs" firstAttribute="centerY" secondItem="fn9-QG-ZlP" secondAttribute="centerY" id="Uqo-ze-H5P"/>
                                         <constraint firstAttribute="bottom" secondItem="3Z5-lK-HE3" secondAttribute="bottom" constant="8" id="eRJ-Rk-tf2"/>
                                         <constraint firstAttribute="bottom" secondItem="VvA-NZ-8hM" secondAttribute="bottom" id="feA-2c-Qrd"/>
                                         <constraint firstAttribute="trailing" secondItem="VvA-NZ-8hM" secondAttribute="trailing" id="wj8-7W-gdn"/>
@@ -58,6 +63,7 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="fn9-QG-ZlP" secondAttribute="bottom" constant="-8" id="vgL-Sb-t1T"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="Ync-Uv-nWs" id="U4c-Dn-5rf"/>
                                     <outlet property="descriptionLabel" destination="3Z5-lK-HE3" id="lBd-B9-cqe"/>
                                     <outlet property="pictureImage" destination="VvA-NZ-8hM" id="Xhr-h6-TJx"/>
                                 </connections>
@@ -68,7 +74,7 @@
                             <outlet property="delegate" destination="Zqc-Wv-sva" id="WGb-nk-3V8"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="saJ-ld-F3J"/>
+                    <navigationItem key="navigationItem" title="Picture of the day" id="saJ-ld-F3J"/>
                     <connections>
                         <segue destination="8KG-z1-biy" kind="show" identifier="showDetails" id="HdK-M8-Tf8"/>
                     </connections>
@@ -86,25 +92,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QTw-4o-ThY">
-                                <rect key="frame" x="0.0" y="103" width="393" height="393"/>
+                                <rect key="frame" x="0.0" y="155" width="393" height="393"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QTw-4o-ThY" secondAttribute="height" multiplier="1:1" id="L0g-F7-GSx"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aDz-o2-K5M">
-                                <rect key="frame" x="16" y="504" width="361" height="314"/>
+                                <rect key="frame" x="16" y="556" width="361" height="262"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Xkl-TW-w8p">
-                                <rect key="frame" x="178" y="281" width="37" height="37"/>
+                                <rect key="frame" x="178" y="333" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4EJ-jA-o1v"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Xkl-TW-w8p" firstAttribute="centerY" secondItem="QTw-4o-ThY" secondAttribute="centerY" id="3FD-uA-eFT"/>
                             <constraint firstItem="aDz-o2-K5M" firstAttribute="leading" secondItem="4EJ-jA-o1v" secondAttribute="leading" constant="16" id="75a-K5-kgT"/>
@@ -133,9 +139,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lr8-Vp-BBT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7y5-Ej-yH5">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7y5-Ej-yH5">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -150,9 +159,6 @@
     <resources>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
