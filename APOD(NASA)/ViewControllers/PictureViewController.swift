@@ -28,18 +28,28 @@ class PictureViewController: UICollectionViewController {
         let reversedPictures = pictures.reversed()
         let picture = Array(reversedPictures)[indexPath.item]
         cell.configure(with: picture)
+        cell.layer.cornerRadius = 5
         
         return cell
     }
 
     // MARK: UICollectionViewDelegate
-
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetails", sender: nil)
+    }
     
      // MARK: - Navigation
      
      
-//     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//     }
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         guard let indexPaths = collectionView.indexPathsForSelectedItems else { return }
+         guard let detailVC = segue.destination as? DetailViewController else { return }
+         let reversedPictures = pictures.reversed()
+         indexPaths.forEach { indexPath in
+             detailVC.picture = Array(reversedPictures)[indexPath.item]
+         }
+         
+     }
     
 }
 

@@ -11,11 +11,15 @@ final class DetailViewController: UIViewController {
     
     @IBOutlet var pictureHDImage: UIImageView!
     @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     var picture: Picture!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        setupViews()
     }
     
     private func setupViews() {
@@ -23,6 +27,7 @@ final class DetailViewController: UIViewController {
             switch result {
             case .success(let imageData):
                 self?.pictureHDImage.image = UIImage(data: imageData)
+                self?.activityIndicator.stopAnimating()
             case .failure(let error):
                 print(error)
             }
@@ -34,7 +39,7 @@ final class DetailViewController: UIViewController {
 
 \(picture.explanation)
 
-\(String(describing: picture.copyright))
+\(picture.copyright ?? "")
 """
     }
 
