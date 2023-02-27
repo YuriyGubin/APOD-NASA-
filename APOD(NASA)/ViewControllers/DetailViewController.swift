@@ -32,7 +32,7 @@ final class DetailViewController: UIViewController {
                 print(error)
             }
         }
-        
+        title = picture.date
         descriptionTextView.text = """
 \(picture.title)
 \(picture.date)
