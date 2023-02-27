@@ -127,9 +127,8 @@
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Xkl-TW-w8p">
-                                <rect key="frame" x="178" y="333" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Xkl-TW-w8p">
+                                <rect key="frame" x="178" y="281" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4EJ-jA-o1v"/>
@@ -141,6 +140,7 @@
                             <constraint firstItem="jcd-Pt-gP8" firstAttribute="height" secondItem="23K-b4-fHE" secondAttribute="height" multiplier="0.05" id="Ckd-fR-dmV"/>
                             <constraint firstItem="ya2-h3-o4A" firstAttribute="leading" secondItem="4EJ-jA-o1v" secondAttribute="leading" id="DD9-Aa-oGG"/>
                             <constraint firstItem="4EJ-jA-o1v" firstAttribute="trailing" secondItem="jcd-Pt-gP8" secondAttribute="trailing" constant="16" id="G6a-Rw-4ys"/>
+                            <constraint firstItem="Xkl-TW-w8p" firstAttribute="centerY" secondItem="QTw-4o-ThY" secondAttribute="centerY" id="MMX-Kn-tdg"/>
                             <constraint firstItem="QTw-4o-ThY" firstAttribute="leading" secondItem="4EJ-jA-o1v" secondAttribute="leading" id="W6h-Yo-veH"/>
                             <constraint firstItem="aDz-o2-K5M" firstAttribute="bottom" secondItem="4EJ-jA-o1v" secondAttribute="bottom" id="XVc-3j-xBy"/>
                             <constraint firstItem="jcd-Pt-gP8" firstAttribute="top" secondItem="QTw-4o-ThY" secondAttribute="bottom" constant="8" symbolic="YES" id="Z9T-xd-xD7"/>
@@ -150,6 +150,7 @@
                             <constraint firstItem="4EJ-jA-o1v" firstAttribute="trailing" secondItem="aDz-o2-K5M" secondAttribute="trailing" constant="16" id="pY8-on-VmN"/>
                             <constraint firstAttribute="bottom" secondItem="ya2-h3-o4A" secondAttribute="bottom" id="rLP-Aw-4NT"/>
                             <constraint firstItem="aDz-o2-K5M" firstAttribute="top" secondItem="jcd-Pt-gP8" secondAttribute="bottom" id="t1h-J0-tc6"/>
+                            <constraint firstItem="Xkl-TW-w8p" firstAttribute="centerX" secondItem="23K-b4-fHE" secondAttribute="centerX" id="vgl-Ur-68R"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Inz-Vw-mc5"/>
