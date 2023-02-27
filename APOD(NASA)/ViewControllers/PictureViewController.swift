@@ -68,9 +68,17 @@ extension PictureViewController {
     }
 }
 
-// MARK: -
+// MARK: - Size of collection view items
 extension PictureViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width / 2 - 6, height: UIScreen.main.bounds.width / 2)
+        CGSize(width: view.bounds.width / 2 - 12, height: view.bounds.width / 2 - 3)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        6
     }
 }

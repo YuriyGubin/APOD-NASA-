@@ -12,6 +12,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet var pictureHDImage: UIImageView!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var titleLabel: UILabel!
     
     var picture: Picture!
     
@@ -33,10 +34,10 @@ final class DetailViewController: UIViewController {
             }
         }
         title = picture.date
+        titleLabel.textColor = .orange
+        titleLabel.font.withSize(20)
+        titleLabel.text = picture.title
         descriptionTextView.text = """
-\(picture.title)
-\(picture.date)
-
 \(picture.explanation)
 
 \(picture.copyright ?? "")
