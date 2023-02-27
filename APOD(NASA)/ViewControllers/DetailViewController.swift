@@ -33,8 +33,8 @@ final class DetailViewController: UIViewController {
                 print(error)
             }
         }
+        
         title = picture.date
-        titleLabel.textColor = .orange
         titleLabel.font.withSize(20)
         titleLabel.text = picture.title
         descriptionTextView.text = """
@@ -43,5 +43,4 @@ final class DetailViewController: UIViewController {
 \(picture.copyright ?? "")
 """
     }
-
 }
